@@ -8,7 +8,7 @@ CRUD application using Vue.js framework. All data is stored in Cloud Firestore.
 | Name            | Version | Github Link                                  |
 | --------------- | ------- | -------------------------------------------- |
 | firebase        | 8.4.1   | https://github.com/firebase/firebase-js-sdk  |
-| vue             | 2.6.11  | https://github.com/vuejs/vue-router          |
+| vue             | 2.6.11  | https://github.com/vuejs/vue                 |
 | vue-router      | 3.2.0   | https://github.com/vuejs/vue-router          |
 | tailwindcss     | 2.1.0   | https://github.com/tailwindlabs/tailwindcss  |
 
