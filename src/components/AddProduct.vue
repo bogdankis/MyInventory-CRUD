@@ -57,7 +57,6 @@
             name="date"
             type="date"
             placeholder="Enter date"
-            required
           />
         </div>
 

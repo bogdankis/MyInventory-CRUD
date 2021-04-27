@@ -177,7 +177,7 @@ export default {
   created() {
     db.collection("products").onSnapshot((snapshotChange) => {
       this.products = [];
-      snapshotChange.forEach((doc) => {
+      snapshotChange.forEach((doc) => { //adds product in products with all following fields
         this.products.push({
           key: doc.id,
           name: doc.data().name,
@@ -192,7 +192,7 @@ export default {
   },
   computed: {
     filterdProducts() {
-      return this.products.filter((product) => {
+      return this.products.filter((product) => {// search filter by name,brand,comment,expiration,quantity,units
         return (
           product.name.toLowerCase().match(this.search) ||
           product.brand.toLowerCase().match(this.search) ||
@@ -206,7 +206,7 @@ export default {
   },
   methods: {
     deleteProduct(id) {
-      if (window.confirm("Do you really want to delete this product?")) {
+      if (window.confirm("Do you really want to delete this product?")) { //delete a product from the collection on the server
         db.collection("products")
           .doc(id)
           .delete()
@@ -218,14 +218,13 @@ export default {
           });
       }
     },
-    deleteAllProducts() {
+    deleteAllProducts() {// delete all data from Cloud Firestore 
       if (
         window.confirm(
           "Do you really want to delete all the products from the inventory?\n NOTE: All the data will be lost permanently"
         )
       ) {
-        db.collection("products")
-          .get()
+        db.collection("products")// gets all data from Cloud Firestore and delete each element
           .then((response) => {
             response.forEach((element) => {
               element.ref.delete();
